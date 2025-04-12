@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider, Box, Heading, Container } from '@chakra-ui/react';
+import Chat from './components/Chat';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Box minH="100vh" bg="gray.50">
+        <Container maxW="container.xl" py={8}>
+          <Heading as="h1" size="xl" textAlign="center" mb={8}>
+            SOSAI - 익명 기반 위기 대응 AI 챗봇
+          </Heading>
+          <Chat />
+        </Container>
+      </Box>
+    </ChakraProvider>
   );
 }
 
